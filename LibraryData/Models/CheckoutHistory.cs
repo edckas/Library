@@ -10,7 +10,7 @@ namespace LibraryData.Models
         public int Id { get; set; }
 
         [Required]
-        public LibraryAsset GetLibraryAsset { get; set; }
+        public LibraryAsset LibraryAsset { get; set; }
 
         [Required]
         public LibraryCard LibraryCard { get; set; }
