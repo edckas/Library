@@ -23,19 +23,19 @@
             @if (Model.Status == "Lost")
             { 
                 <p>This item has been lost. It cannot be checked out.</p>
-                <button class="btn btn-lg btn-danger" role="button" asp-controller="Catalog" asp-action="MarkFound" asp-route-id="@Model.Id">Mark Item Found</button>
+                <a class="btn btn-lg btn-danger" role="button" asp-controller="Catalog" asp-action="MarkFound" asp-route-id="@Model.Id">Mark Item Found</a>
+            }
+
+            @if (Model.Status == "Available")
+            {
+                <a class="btn btn-lg btn-info" role="button" asp-controller="Catalog" asp-action="Checkout" asp-route-id="@Model.Id">Check Out</a>
             }
 
             @if (Model.Status == "Checked Out")
             { 
                 <p id="patronName">Checked Out By: @Model.PatronName</p>
-                <button class="btn btn-lg btn-success" role="button" asp-controller="Catalog" asp-action="CheckIn" asp-route-id="@Model.Id">Check In</button>
-                <button class="btn btn-lg btn-warning" role="button" asp-controller="Catalog" asp-action="Hold" asp-route-id="@Model.Id">Place Hold</button>
-            }
-
-            @if (Model.Status == "Available")
-            { 
-               <button class="btn btn-lg btn-info" role="button" asp-controller="Catalog" asp-action="Checkout" asp-route-id="@Model.Id">Check Out</button>
+                <a class="btn btn-lg btn-success" role="button" asp-controller="Catalog" asp-action="CheckIn" asp-route-id="@Model.Id">Check In</a>
+                <a class="btn btn-lg btn-warning" role="button" asp-controller="Catalog" asp-action="Hold" asp-route-id="@Model.Id">Place Hold</a>
             }
 
         </div>
